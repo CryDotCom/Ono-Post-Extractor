@@ -1,4 +1,7 @@
 # Ono-Post-Extractor
+
+## This is a tampermonkey userscript.
+
 Extracts image and tag information from single Posts, formats tags, and saves them to files.
 
 This code will add a new right-click context menu to Tampermonkey and it has a Hotkey combination to trigger the download.
