@@ -1,11 +1,7 @@
 # Ono-Post-Extractor
 Extracts image and tag information , formats tags, and saves them to files
 
-# Random-E621-Artist-A1111
-
-Add random artist names to your prompt from over 700 Artists of E621.
-
-This code will add a new right-click context menu to Tampermonkey while on A1111. 
+This code will add a new right-click context menu to Tampermonkey
 
 --------------------------------
 > [!TIP]
