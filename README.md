@@ -25,5 +25,5 @@ script will format tags correctly by default. adding by to artists and formating
 
 --------------------------------
 
-_These script are made with the help of AI._
+_These scripts are made with the help of AI._
 
