@@ -23,8 +23,8 @@ This code will add a new right-click context menu to Tampermonkey and it has a H
 --------------------------------
 on sankakuComplex only chan.sankakucomplex will work, beta is not supported.
 
-script will format tags correctly by default. adding by to artists and formating (tag) to /(tag/).
-- "by name,by name,by name /(artist/),..."
+script will format tags correctly by default. adding by to artists and formating (tag) to \\(tag\\).
+- "by name \\(artist\\),by name,tag,tag \\(tag\\),.."
 
 --------------------------------
 
