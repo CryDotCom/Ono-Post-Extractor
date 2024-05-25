@@ -21,9 +21,9 @@ This code will add a new right-click context menu to Tampermonkey and it has a H
 - Right-click on a post page -> Tampermoney -> Image and Tag Extractor * -> Extract Data
 
 --------------------------------
-on sankakuComplex only chan.sankakucomplex will work beta is not supported.
+on sankakuComplex only chan.sankakucomplex will work, beta is not supported.
 
-script will format tags correctly by default. adding by to artists and formating (tag) to \(tag\).
+script will format tags correctly by default. adding by to artists and formating (tag) to /(tag/).
 - "by name,by name,by name /(artist/),..."
 
 --------------------------------
