@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Image and Tag Extractor for e621.net
 // @namespace    https://github.com/CryDotCom/Ono-Post-Extractor
+// @version      1.5
 // @updateURL    https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/Extractor_e621.js
 // @downloadURL  https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/Extractor_e621.js
-// @version      1.4
 // @description  Extracts image and tag information from e621.net, formats tags, and saves them to a file, excluding certain categories of tags, ensuring sequential downloads.
 // @author       Onocom/Crydotcom
 // @match        https://e621.net/*
