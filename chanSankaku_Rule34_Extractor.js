@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Image and Tag Extractor for Sankaku Complex and Rule34.xxx
+// @version      3.2
 // @namespace    https://github.com/CryDotCom/Ono-Post-Extractor
 // @updateURL    https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/chanSankaku_Rule34_Extractor.js
 // @downloadURL  https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/chanSankaku_Rule34_Extractor.js
-// @version      3.1
 // @description  Extracts image and tag information from Sankaku Complex and Rule34.xxx, formats tags, and saves them to files, excluding certain categories of tags, ensuring sequential downloads.
 // @author       Onocom/Crydotcom
 // @match        https://chan.sankakucomplex.com/*
