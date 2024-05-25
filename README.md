@@ -7,7 +7,8 @@ This code will add a new right-click context menu to Tampermonkey
 > [!TIP]
 > ### how to install:
 > - click on the .js file open it, open the Raw view of it (top right)
->   - or [click here](https://github.com/CryDotCom/Ono-Post-Extractor/raw/main/Extractor_e621.js)
+>   - or e621 extractor [click here](https://github.com/CryDotCom/Ono-Post-Extractor/raw/main/Extractor_e621.js)
+>   - chan.sankaku or rule34 [click here](https://github.com/CryDotCom/Ono-Post-Extractor/raw/main/Extractor_e621.js)
 > - select all and copy (Ctrl+A -> Ctrl+C)
 > - open tampermonkey -> add new userscript -> paste (Ctrl+V) -> save.
 --------------------------------
