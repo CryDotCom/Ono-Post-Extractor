@@ -52,8 +52,6 @@
                 }
             });
 
-            console.log("All tags:", tags);
-
             // Format tags
             const formattedTags = tags.map(tag => {
                 // Replace underscores with spaces
