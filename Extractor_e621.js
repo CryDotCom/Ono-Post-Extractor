@@ -7,6 +7,7 @@
 // @description  Extracts image and tag information from e621.net, formats tags, and saves them to a file, excluding certain categories of tags, ensuring sequential downloads.
 // @author       Onocom/Crydotcom
 // @match        https://e621.net/*
+// @match        https://danbooru.donmai.us/*
 // @grant        GM_registerMenuCommand
 // @grant        GM_download
 // ==/UserScript==
@@ -43,7 +44,11 @@
             // Extract tags from the tag list section
             const tags = [];
             tagListSection.querySelectorAll('ul[class$="-tag-list"] a.search-tag').forEach(tagLink => {
-                const tag = tagLink.getAttribute('href').split('=')[1];
+                let tag = tagLink.getAttribute('href').split('=')[1];
+                // Stop extracting if '&' is found in the tag part
+                if (tag.includes('&')) {
+                    tag = tag.split('&')[0];
+                }
                 const decodedTag = decodeURIComponent(tag);
                 if (tagLink.closest('ul').classList.contains('artist-tag-list')) {
                     tags.push(`by ${decodedTag}`);
