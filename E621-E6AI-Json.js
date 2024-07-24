@@ -1,8 +1,10 @@
 // ==UserScript==
 // @name         E621/E6AI JSON Downloader
-// @namespace    ""
+// @namespace    https://github.com/CryDotCom/Ono-Post-Extractor
+// @updateURL    https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/E621-E6AI-Json.js
+// @downloadURL  https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/E621-E6AI-Json.js
 // @version      1.2
-// @description  Adds a button to download post data as JSON on e621.net and e6ai.net
+// @description  Adds a button to directly download the JSON post data on e621.net and e6ai.net
 // @author       Onocom/GPT
 // @match        https://e621.net/posts/*
 // @match        https://e6ai.net/posts/*
