@@ -27,6 +27,10 @@ script will format tags correctly by default. adding by to artists and formating
 - "by name \\(artist\\),by name,tag,tag \\(tag\\),.."
 
 --------------------------------
+### about Json downloader
+- adds a button to the page below the image to download the json data directly when clicking it.
+- the json file will be named after the Image ID.
 
+--------------------------------
 _These scripts are made with the help of AI._
 
