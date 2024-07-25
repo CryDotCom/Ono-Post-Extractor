@@ -58,10 +58,6 @@
             const formattedTags = tags.map(tag => {
                 // Decode URL-encoded characters
                 tag = decodeURIComponent(tag);
-
-                // Replace parentheses with escaped parentheses
-                tag = tag.replace(/\(/g, '\\(').replace(/\)/g, '\\)');
-
                 // Replace underscores with spaces
                 tag = tag.replace(/_/g, ' ');
 
