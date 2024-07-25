@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Image and Tag Extractor for Sankaku Complex and Rule34.xxx
-// @version      3.2
+// @version      3.3
 // @namespace    https://github.com/CryDotCom/Ono-Post-Extractor
 // @updateURL    https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/chanSankaku_Rule34_Extractor.js
 // @downloadURL  https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/chanSankaku_Rule34_Extractor.js
