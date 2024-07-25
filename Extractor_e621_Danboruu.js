@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Image and Tag Extractor for e621.net and Danbooru
 // @namespace    https://github.com/CryDotCom/Ono-Post-Extractor
-// @version      1.6
+// @version      1.7
 // @updateURL    https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/Extractor_e621_Danboruu.js
 // @downloadURL  https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/Extractor_e621_Danboruu.js
 // @description  Extracts image and tag information from e621.net/Danboruu, formats tags, and saves them to a file, excluding certain categories of tags, ensuring sequential downloads.
@@ -61,8 +61,6 @@
             const formattedTags = tags.map(tag => {
                 // Replace underscores with spaces
                 tag = tag.replace(/_/g, ' ');
-                // Format parentheses
-                tag = tag.replace(/\(/g, '\\(').replace(/\)/g, '\\)');
                 return tag;
             });
 
