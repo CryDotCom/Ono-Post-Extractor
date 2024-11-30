@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Image and Tag Extractor for chan.Sankaku Complex/Rule34.xxx/gelbooru
-// @version      3.7
+// @version      3.8
 // @namespace    https://github.com/CryDotCom/Ono-Post-Extractor
 // @updateURL    https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/chanSankaku_Rule34_Extractor.js
 // @downloadURL  https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/chanSankaku_Rule34_Extractor.js
@@ -156,14 +156,17 @@
                 alert("Tag sidebar not found.");
                 return;
             }
+            // Extract tags
             const tags = [];
             tagSidebar.querySelectorAll('li').forEach(li => {
-               const tagLink = li.querySelector('a[href*="tags="]');
-                   let tag = tagLink.getAttribute('href').split('tags=')[1];
-                   if (li.classList.contains('tag-type-artist')) {
-                       tag = `by_${tag}`;
-                   }
-                   tags.push(tag);
+                const tagLink = li.querySelector('a[href*="tags="]');
+                if (tagLink) { // Ensure tagLink is not null before proceeding
+                    let tag = tagLink.getAttribute('href').split('tags=')[1];
+                    if (li.classList.contains('tag-type-artist')) {
+                        tag = `by_${tag}`;
+                    }
+                    tags.push(tag);
+                }
             });
 
             // Format tags
