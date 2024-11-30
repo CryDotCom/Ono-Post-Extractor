@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Image and Tag Extractor for chan.Sankaku Complex/Rule34.xxx/gelbooru
-// @version      3.6
+// @version      3.7
 // @namespace    https://github.com/CryDotCom/Ono-Post-Extractor
 // @updateURL    https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/chanSankaku_Rule34_Extractor.js
 // @downloadURL  https://raw.githubusercontent.com/CryDotCom/Ono-Post-Extractor/master/chanSankaku_Rule34_Extractor.js
@@ -29,31 +29,39 @@
                 return;
             }
 
-            // Extract the name
+            // Extract the name or fallback to Post ID
+            let saveName;
             const nameSpan = contentDiv.querySelector('span[itemprop="name"]');
-            if (!nameSpan) {
-                alert("Name not found.");
-                return;
+            if (nameSpan) {
+                saveName = nameSpan.textContent.trim();
+            } else {
+                // Fallback: Extract Post ID from stats or URL
+                const postIdSpan = Array.from(statsDiv.querySelectorAll('span')).find(span =>
+                 span.textContent.includes('Post ID:')
+                );
+                if (postIdSpan) {
+                    saveName = postIdSpan.textContent.replace('Post ID:', '').trim();
+                } else {
+                    // Fallback to extracting Post ID from URL
+                    const currentUrl = window.location.href;
+                    const urlMatch = currentUrl.match(/\/posts\/([a-zA-Z0-9]+)[^a-zA-Z0-9]?/);
+                    saveName = urlMatch ? urlMatch[1] : "unnamed";
+                }
             }
-            const saveName = nameSpan.textContent.trim();
 
             // Extract tags
-            const tagSidebar = sidebarDiv.querySelector('ul#tag-sidebar');
-            if (!tagSidebar) {
-                alert("Tag sidebar not found.");
-                return;
-            }
             const tags = [];
-            tagSidebar.querySelectorAll('li').forEach(li => {
-                const tagLink = li.querySelector('a[href^="/en/?tags="]');
-                if (tagLink && !li.classList.contains('tag-type-copyright') && !li.classList.contains('tag-type-studio')) {
-                    let tag = tagLink.getAttribute('href').split('=')[1];
-                    if (li.classList.contains('tag-type-artist')) {
-                        tag = `by_${tag}`;
-                    }
-                    tags.push(tag);
-                }
-            });
+            const tagSidebar = sidebarDiv.querySelector('ul#tag-sidebar');
+            if (tagSidebar) {
+                tagSidebar.querySelectorAll('li').forEach(li => {
+                   const tagLink = li.querySelector('a[href^="/en/?tags="]');
+                       let tag = tagLink.getAttribute('href').split('=')[1];
+                       if (li.classList.contains('tag-type-artist')) {
+                           tag = `by_${tag}`;
+                       }
+                       tags.push(tag);
+               });
+            }
 
             // Format tags
             const formattedTags = tags.map(tag => {
@@ -87,7 +95,7 @@
 
             // Save tags to a text file and wait for it to complete
             const tagsContent = formattedTags.join(',');
-            const tagsBlob = new Blob([tagsContent], {type: 'text/plain'});
+            const tagsBlob = new Blob([tagsContent], { type: 'text/plain' });
             const tagsUrl = URL.createObjectURL(tagsBlob);
             const tagsFileName = `${saveName}.txt`;
 
@@ -150,14 +158,12 @@
             }
             const tags = [];
             tagSidebar.querySelectorAll('li').forEach(li => {
-                const tagLink = li.querySelector('a[href*="tags="]');
-                if (tagLink && !li.classList.contains('tag-type-copyright') && !li.classList.contains('tag-type-studio')) {
-                    let tag = tagLink.getAttribute('href').split('tags=')[1];
-                    if (li.classList.contains('tag-type-artist')) {
-                        tag = `by_${tag}`;
-                    }
-                    tags.push(tag);
-                }
+               const tagLink = li.querySelector('a[href*="tags="]');
+                   let tag = tagLink.getAttribute('href').split('tags=')[1];
+                   if (li.classList.contains('tag-type-artist')) {
+                       tag = `by_${tag}`;
+                   }
+                   tags.push(tag);
             });
 
             // Format tags
@@ -246,7 +252,7 @@
             // Extract tags
             const tags = [];
             tagListSection.querySelectorAll('li').forEach(li => {
-                if (li.classList.contains('tag-type-artist') || li.classList.contains('tag-type-character') || li.classList.contains('tag-type-general')) {
+                if (li.className.startsWith('tag-type-')) { // Matches any class starting with 'tag-type-'
                     const tagLink = li.querySelector('a[href*="tags="]');
                     if (tagLink) {
                         let tag = tagLink.textContent.trim();
