@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         e621/e6ai Hover Zoom Previewer+
-// @namespace    http://tampermonkey.net/
-// @version      17.0
+// @namespace    https://github.com/CryDotCom/Ono-Post-Extractor
+// @version      17.1
 // @description  The preview window now always starts at 350x350 in the top-left corner. The user can then resize and move it, and it will persist.
 // @match        https://e621.net/posts*
 // @match        https://e6ai.net/posts*
