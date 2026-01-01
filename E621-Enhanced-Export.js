@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         E621/E6AI Enhanced Export Tools
-// @namespace    http://tampermonkey.net/
-// @version      1.6
+// @namespace    https://github.com/CryDotCom/Ono-Post-Extractor
+// @version      1.7
 // @description  Adds enhanced export functionality (Tags, File, JSON) to e621.net and e6ai.net posts with native button styling.
 // @author       Onocom & AI Assistant
 // @match        https://e621.net/posts/*
